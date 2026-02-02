@@ -1,9 +1,0 @@
-### Gene Set Enrichment Analysis (GSEA)
-
-Gene Set Enrichment Analysis (GSEA) evaluates whether predefined sets of genes, such as pathways or functional categories, show coordinated changes between experimental conditions. Instead of relying on a discrete list of differentially expressed genes, GSEA uses an ordered list of all genes ranked by a continuous statistic (for example, log fold change or a test statistic). It then assesses whether members of a given gene set tend to occur toward the top or bottom of this ranked list more often than expected by chance.
-
-The result of GSEA is an enrichment score that reflects the degree to which a gene set is overrepresented at the extremes of the ranked list, along with a normalized enrichment score and an adjusted p-value to account for gene set size and multiple testing. The **leading-edge subset** identifies the core genes within a gene set that contribute most strongly to the enrichment signal, providing a focused view of which genes drive the observed pathway-level effect.
-
-Interpretation of GSEA results depends on **the ranking metric, gene set definitions, and sample size**. Because GSEA captures subtle but coordinated expression changes, it is well suited for detecting pathway-level modulation even when individual genes show modest effects. However, enriched gene sets often overlap, and results should be interpreted as evidence for broader biological trends rather than isolated pathways, ideally in conjunction with gene-level analyses and biological context.
-
-TODO : Add picture with description for BCOR pathway

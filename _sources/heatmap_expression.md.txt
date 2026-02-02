@@ -1,9 +1,0 @@
-# Heatmap of Gene Expression
-
-A heatmap provides an overview of gene expression patterns across individual samples by displaying normalized counts for each gene–sample combination using a color scale. Each row typically represents a gene and each column a sample, with color intensity reflecting relative expression levels. When shown at the sample level, without averaging or clustering, the heatmap allows direct inspection of how expression varies across replicates and conditions.
-
-This type of heatmap is particularly useful for assessing **sample-to-sample consistency** and the presence of obvious outliers. Replicates from the same experimental condition are expected to show similar expression patterns for many genes, while systematic differences across conditions may already be visible for strongly regulated genes. Because genes are not averaged or clustered, the layout preserves the original sample ordering, which can help relate expression patterns to experimental metadata such as batch, treatment, or time point.
-
-Interpretation of such heatmaps depends strongly on **data scaling and gene selection**. Normalized counts may span a wide dynamic range, so additional transformations (e.g. log or variance-stabilizing transformations) are often applied to make patterns more interpretable. Moreover, heatmaps are typically most informative when restricted to a subset of genes, such as differentially expressed or highly variable genes; including all genes can obscure meaningful patterns. As a result, this visualization should be viewed as an exploratory tool that complements, rather than replaces, quantitative statistical analyses.
-
-![Expression Heatmap](./Images/expression_heatmap.png)

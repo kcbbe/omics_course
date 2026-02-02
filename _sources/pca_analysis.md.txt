@@ -1,6 +1,0 @@
-# Principal Component Analysis (PCA) 
-
-Principal Component Analysis (PCA) provides an overview of the major sources of variation across samples by projecting high-dimensional gene expression profiles into a small number of principal components. Each point represents a sample, and samples that cluster together have more similar global expression patterns. The separation observed along the first few principal components reflects the dominant biological or technical differences between samples.  
-It is important to note that **PCA results depend strongly on the set of genes used to compute the analysis**. Using all genes, only highly expressed genes, or selecting the most variable genes can each emphasize different aspects of the data. For example, PCA based on variable genes tends to highlight biological contrasts, whereas PCA using all genes may dilute these effects with noise or low-variance genes. Therefore, interpretation should consider the gene subset used, as this can influence clustering patterns and the apparent relationships among samples.
-
-![PCA analysis](./Images/pca_bcor.png)

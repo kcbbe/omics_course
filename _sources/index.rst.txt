@@ -1,0 +1,61 @@
+.. general_docs documentation master file, created by
+   sphinx-quickstart on Sun Jun 17 07:46:18 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+OMICS COURSE
+============
+
+Version: |version|
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Course Overview
+
+   learning_objectives.md
+  
+.. toctree::
+   :maxdepth: 1
+   :caption: Intro Omics
+
+   Omics overview <omics_overview.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: RNA seq analysis
+
+   Programming languages <program_languages.md>
+   General analysis flow <standard_pipeine.md>
+   Webtools <webtools.md>
+   Example file <rmd_file_description.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Data Exploration
+
+    M over A <m_over_a_plot.md>
+    PCA <pca_analysis.md>
+    Heatmap <heatmap_expression.md>
+    Boxplot <boxplot.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Statistical analysis
+
+   Regulated genes <regulated_genes.md>
+   Log-Log plot <log_log_plots.md>
+   Volcano plot <volcano_plot.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Biological Interpretation
+
+    GO analysis<go_analysis.md>
+    GSEA <gsea.md>
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: References
+
+   Further reading <further_reading.md>

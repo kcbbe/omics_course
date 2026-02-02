@@ -1,0 +1,11 @@
+# Volcano Plot
+
+A volcano plot is a compact way to visualize the results of a differential expression analysis by combining **effect size** and **statistical significance** for each gene in a single figure. Each point represents a gene, with the x-axis showing the log<sub>2</sub> fold change between two conditions (magnitude and direction of change) and the y-axis showing the –log<sub>10</sub> of the p-value or adjusted p-value (strength of statistical evidence). Genes with large fold changes and high statistical significance appear toward the top left or top right of the plot.
+
+Genes on the **right side** of the plot are upregulated in the condition of interest, while genes on the **left side** are downregulated. Horizontal and vertical reference lines are often added to indicate commonly used thresholds, such as an adjusted p-value cutoff (e.g. FDR < 0.05) and a minimum fold change deemed biologically meaningful. Genes that pass both criteria are typically highlighted, as they represent the most robust and interpretable changes.
+
+It is important to recognize that **volcano plots depend strongly on the statistical model and preprocessing choices** used in the differential expression analysis. Normalization, dispersion estimation, filtering of lowly expressed genes, and fold-change shrinkage can all influence the appearance of the plot. In particular, genes with very low counts may show large fold changes but low statistical significance, while highly expressed genes can achieve statistical significance with relatively small fold changes. Therefore, volcano plots should be interpreted as a guide to prioritization rather than a definitive statement of biological relevance, and key genes should always be examined in the context of expression levels, experimental design, and downstream validation.
+
+![Volcano Plot](./Images/volcano_plot.png)
+
+

@@ -1,0 +1,59 @@
+# Omics techniques
+
+## Genomics 
+Genomics focuses on the complete DNA sequence of an organism and the identification of genetic variation. It includes applications such as whole-genome sequencing, exome sequencing, and targeted sequencing. Genomic data provide information about mutations, copy number changes, and structural variants. These variations can influence disease risk, phenotype, and cellular behavior. Genomics forms the foundation upon which other omics layers are interpreted.
+
+## Transcriptomics  
+Transcriptomics measures RNA molecules produced from the genome under specific conditions. RNA-seq is the most widely used approach for profiling gene expression at the transcriptome level. Transcriptomic data reflect which genes are active and at what relative levels. Changes in gene expression often indicate responses to developmental cues, environmental stimuli, or disease states. Transcriptomics provides a dynamic view of cellular activity.
+
+## Epigenomics
+Epigenomics studies chemical modifications to DNA and histone proteins that influence gene regulation without changing DNA sequence. Common assays include DNA methylation profiling, ChIP-seq for histone modifications or transcription factors, and ATAC-seq for chromatin accessibility. These data describe the regulatory landscape of the genome. Epigenomic features help explain why genes are expressed differently across cell types. They link genomic sequence to transcriptional output.
+
+## Proteomics
+Proteomics characterizes the proteins present in a cell, tissue, or organism. Mass spectrometry–based approaches are commonly used for protein identification and quantification. Proteomic data provide information on protein abundance, modifications, and interactions. Proteins are the main functional molecules executing cellular processes. Proteomics therefore offers a direct view of molecular function.
+
+## Metabolomics
+Metabolomics measures small-molecule metabolites involved in cellular metabolism. These include sugars, amino acids, lipids, and other biochemical intermediates. Metabolomic profiles reflect the biochemical state of a cell or organism. They are strongly influenced by both genetic and environmental factors. Metabolomics provides a functional readout of cellular physiology.
+
+## Microbiomics
+Microbiomics examines the composition and function of microbial communities associated with an environment or host. Sequencing of marker genes (e.g. 16S rRNA) or whole metagenomes is commonly used. Microbiome composition can influence host metabolism, immunity, and disease. Microbiomic data describe which microorganisms are present and in what abundance. They add an ecological dimension to omics studies.
+
+# OMICS -data
+Below we give a few examples of data files that are obtained with the various techniques. Note that although the actual variables that are measured are different, the underlying data structures are the same. Another important feature of these data sets is that not all matrices represent the same type of quantitative information. A key distinction is between **relative abundance data**, **count-based or normalized count data**, and **absolute measurements**.
+
+In many sequencing-based assays (such as RNA-seq, ATAC-seq, or microbiome profiling), the primary data are **counts**: the number of sequencing reads assigned to each feature. These counts are then often normalized to account for sequencing depth (e.g. counts per million, CPM, or similar measures). Although these values are numerical, they remain **relative**: increasing the apparent abundance of one feature necessarily decreases the relative proportion of others within the same sample because the total sequencing output is fixed. This means that features are statistically interdependent.
+
+By contrast, some technologies aim to measure **absolute quantities**, such as protein concentration (e.g. ng/µg protein), metabolite concentration (e.g. µM), or cell counts. In these matrices, each variable is measured independently on a physical scale, and changing the value of one feature does not mathematically constrain the others.
+
+Understanding whether a data matrix contains relative, normalized, or absolute measurements is important for interpretation and statistical analysis, because it influences how differences between samples should be compared and what assumptions are reasonable.
+
+## Transcriptomics (RNA-seq: gene expression counts)
+
+This is the primary data source in many RNAseq experiments, but the calculations are normally done on normalized counts (i.e. corrected for the total number of reads in the sample).
+
+| Sample | Dusp4 | Akt1 | Pkc-theta | LysR |
+| ------ | ----- | ---- | --------- | ---- |
+| S1     | 1200  | 45   | 300       | 900  |
+| S2     | 1100  | 50   | 280       | 870  |
+| S3     | 200   | 800  | 90        | 150  |
+
+## Proteomics (protein abundances)
+In proteomics, proteins are most often measured based on their intensities in mass spectra. These represent a (derivative) of an absolute quantity.
+
+| Sample | ABCA1 | DKK2 | CXCR3 |
+| ------ | ----- | ---- | ----- |
+| S1     | 2.3   | 5.1  | 0.9   |
+| S2     | 2.1   | 4.8  | 1.2   |
+| S3     | 0.5   | 0.9  | 3.8   |
+
+## Microbiomics (relative abundance of taxa)
+
+Just as with RNA-seq, 16S profiling studies yield relative abundances, i.e. the abundance corrected for the total number of species reads.
+
+|Sample|Bacteroides|Lactobacillus|Escherichia|
+|---|---|---|---|
+|S1|0.45|0.10|0.02|
+|S2|0.40|0.12|0.03|
+|S3|0.05|0.60|0.01|
+
+These examples illustrate that, despite measuring very different biological entities, many omics data types share a common **samples × features** matrix structure, which enables the use of similar analytical concepts and workflows across technologies.

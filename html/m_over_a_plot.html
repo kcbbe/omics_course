@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mean–Average (MA) plot &mdash; OMICS course  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/tenwise.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Principal Component Analysis (PCA)" href="pca_analysis.html" />
+    <link rel="prev" title="Example file" href="rmd_file_description.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            OMICS course
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html#who-should-attend">Who should attend?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html#program">Program</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Intro Omics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="omics_overview.html">Omics techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omics_overview.html#omics-data">OMICS -data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RNA seq analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="webtools.html">Webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rmd_file_description.html">Example file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data Exploration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> M over A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca_analysis.html"> PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heatmap_expression.html"> Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boxplot.html"> Boxplot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="regulated_genes.html">Regulated genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log_log_plots.html">Log-Log plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volcano_plot.html">Volcano plot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Interpretation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="go_analysis.html"> GO analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gsea.html"> GSEA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="further_reading.html">Further reading</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OMICS course</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mean–Average (MA) plot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/m_over_a_plot.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="meanaverage-ma-plot">
+<h1>Mean–Average (MA) plot</h1>
+<p>An MA plot (Mean–Average plot) visualizes differential expression results by relating <strong>expression strength</strong> to <strong>log fold change</strong> for each gene. Each point represents a gene, with the x-axis showing the average expression level across all samples (often on a log scale) and the y-axis showing the log<sub>2</sub> fold change between two conditions. This representation helps assess whether observed fold changes depend on expression level and highlights systematic biases in the data.</p>
+<p>Genes with no systematic change between conditions cluster around a log fold change of zero, while differentially expressed genes appear as points deviating upward or downward. At low expression levels, fold changes tend to be more variable, resulting in a wider spread of points; at higher expression levels, fold changes are typically more stable. For this reason, MA plots are particularly useful for evaluating normalization performance and the effectiveness of fold-change shrinkage methods, which aim to reduce exaggerated fold changes for lowly expressed genes.</p>
+<p>As with volcano plots, <strong>the appearance of an MA plot depends on preprocessing and modeling choices</strong>, including normalization, filtering of low-count genes, and whether shrunken or raw fold changes are shown. Interpretation should therefore focus on overall patterns and trends rather than individual low-expression genes, and candidate genes should be considered in the context of their expression levels and biological plausibility.</p>
+<p><img alt="M over A plot " src="_images/m_over_a.png" /></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rmd_file_description.html" class="btn btn-neutral float-left" title="Example file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pca_analysis.html" class="btn btn-neutral float-right" title="Principal Component Analysis (PCA)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 Hanze.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

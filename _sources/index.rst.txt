@@ -6,7 +6,7 @@
 OMICS COURSE
 ============
 
-Documentation for the omics course
+Documentation for the omics course.
 
 
 Version: |version|
@@ -47,7 +47,8 @@ Version: |version|
    :caption: Statistical analysis
 
    Regulated genes <markdown/regulated_genes.md>
-   Boxplot <markdown/venn.md>
+   Boxplot <markdown/boxplot.md>
+   Venn diagrams <markdown/venn.md>
    Log-Log plot <markdown/log_log_plots.md>
    Volcano plot <markdown/volcano_plot.md>
 

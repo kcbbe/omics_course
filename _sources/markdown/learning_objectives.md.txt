@@ -1,100 +1,149 @@
+# Course information "Bioinformatics for Epigenomics"
+
+This course is intended to make participants familiar with the major bioinformatic concepts and practical steps involved in the analysis and interpretation of epigenomic data, with a focus on transcriptomic (RNA-seq) analysis. This focus is chosen because a lot of epigenetic modifications are evaluated with RNA-seq and a lot of statistical principles that are valid for all epigenomics data can be best demonstrated on gene count data.
+
+<hr>
+
 # Learning objectives
 
-## General Omics and Sequencing Technologies
+## Epigenomics
 
-In the introductory part of this course, participants will:
+* Learn about the biological processes that govern the most important epigenomic mechanisms.
+* Distinguish between common sequencing-based omics approaches used for expression and regulatory profiling, such as bulk RNA-seq, ATAC-seq, ChIP-seq, and DNA methylation profiling.
+* Recognize the type of information each sequencing assay provides (e.g. gene expression, chromatin accessibility, transcription factor binding, histone modifications, DNA methylation).
+* Understand the data formats that are produced by each sequencing technique and how these data can be processed and interconverted.
+* Understand and learn how these data can be visualized using publicly available web tools.
 
-- Identify major classes of omics data, including genomics, transcriptomics, epigenomics, proteomics, and metabolomics.
-    
-- Understand the biological questions each omics layer addresses and how these layers relate to one another within the flow of information from DNA to RNA to protein to cellular phenotype.
-    
-- Distinguish between common sequencing-based omics approaches used for expression and regulatory profiling, such as bulk RNA-seq, single-cell RNA-seq, ATAC-seq, ChIP-seq, and DNA methylation profiling.
-    
-- Recognize the type of information each sequencing assay provides (e.g. gene expression, chromatin accessibility, transcription factor binding, histone modifications, DNA methylation).
-    
-- Understand, at a conceptual level, how different sequencing-based assays complement each other in describing gene regulation and cellular state.
-    
-- Appreciate why RNA-seq is widely used as a general-purpose assay for transcriptome profiling and how it fits within the broader landscape of omics technologies.
-   
-## RNA-seq analysis
+## RNA-seq
 
-After this general overview, the course focuses in detail on the experimental design, data generation, and analysis of bulk RNA-seq experiments. Upon completion, participants should be able to:
+* Understand the general principles behind RNA-seq, including experimental setup and the structure and content of typical RNA-seq data files (e.g. FASTQ files, count matrices, sample metadata).
+* Outline a standard RNA-seq analysis pipeline, including quality control, normalization, differential expression analysis, and downstream functional interpretation.
+* Use publicly available web-based tools to perform gene set analysis and biological interpretation, including gene set enrichment tools and tools based on large language models.
 
-- Describe the major stages of an RNA-seq experiment, from experimental design and sample preparation to sequencing and data generation.
-    
-- Identify key considerations in experimental setup, including biological replicates, controls, library preparation strategies (e.g. poly(A) selection versus rRNA depletion), and sequencing depth.
-    
-- Understand the structure and content of typical RNA-seq data files (e.g. FASTQ files, count matrices, sample metadata).
-    
-- Outline a standard RNA-seq analysis pipeline, including quality control, normalization, differential expression analysis, and downstream functional interpretation.
-    
-- Recognize the purpose and interpretation of common visualizations used in RNA-seq analysis (e.g. PCA plots, volcano plots, MA plots, heatmaps, boxplots, pathway and gene set enrichment plots).
-    
-- Follow an annotated R Markdown workflow that implements an end-to-end RNA-seq analysis using established software packages.
-    
-- Reproduce example analyses, modify parameters, and assess how these changes affect results and interpretation.
-    
-- Interpret differential expression and pathway-level results in the context of the underlying biological question.
-    
-The course focuses on practical understanding and interpretation rather than on the mathematical details of statistical modeling, enabling participants to critically evaluate RNA-seq results and communicate findings effectively.
+## Bioinformatics
+
+* Follow an annotated R Markdown workflow for visualization and analysis of ChIP-seq and methylome sequencing data.
+* Follow an annotated R Markdown workflow that implements an end-to-end RNA-seq analysis using standard software libraries.
+* Recognize the purpose and interpretation of common visualizations used in epigenomics and transcriptomics data analysis (e.g. PCA plots, volcano plots, heatmaps, Venn diagrams, boxplots, pathway and gene set enrichment plots).
+* Reproduce example analyses, modify parameters, and assess how these changes affect results and interpretation.
+* Interpret differential expression and pathway-level results in the context of the underlying biological question.
+
+<hr>
 
 # Who should attend?
 
-This course is intended for graduate students, postdoctoral researchers, and other life scientists who generate or plan to generate RNA-seq data and want to better understand how these experiments are designed, analyzed, and interpreted.  The course is also relevant for educators who teach genomics or transcriptomics and are looking for structured, practical content that can be adapted to design or supplement their own courses.
-Participants should have a background in molecular or cellular biology who may have limited formal training in bioinformatics but wish to become more informed and critical users of transcriptomics data.
+This course is primarily intended for teachers in HBO and universities environments. The focus during the course will be on working with example data files and exercises that can be translated into a curriculum for students. The course is also useful for graduate students, postdoctoral researchers, and other life scientists who generate or plan to generate sequence-based omics data and want to better understand how these experiments are designed, analyzed, and interpreted. Participants should have some background in molecular or cellular biology but may have limited prior knowledge of bioinformatics and programming.
+
+<hr>
 
 # Program
-## Day 1 : Morning
 
-### Lecture: Introduction into general ~omics technologies
-This lecture provides an overview of the major omics domains, including genomics, transcriptomics, epigenomics, proteomics, metabolomics, and microbiomics. The relationships between these layers and their roles in describing cellular state and function are discussed. Emphasis is placed on the types of biological questions that each omics-technology can address.
+Throughout the course we will make use of data and visualizations drawn from the following paper:
+**BCOR and BCORL1 Mutations Drive Epigenetic Reprogramming and Oncogenic Signaling by Unlinking PRC1.1 from Target Genes**
+DOI: 10.1158/2643-3230.BCD-21-0115 / PMID: 35015684
 
-### Guest lecture
-A guest speaker presents an application of one or more ~omics technologies in a real research context. The lecture illustrates how experimental design, data generation, and interpretation are combined in practice. 
+This paper describes studies on knockout of proteins (BCOR and BCORL1) involved in epigenetic modification of the genome. The study contains publicly available DNA methylation sequencing, ATAC-seq, ChIP-seq, and RNA-seq data.
 
-### Lecture: Introduction into sequence-based ~omics technologies
-This lecture focuses on sequencing-based assays such as RNA-seq, ATAC-seq, ChIP-seq, DNA methylation profiling, and single-cell RNA-seq. The type of information generated by each type of sequencing approach and typical use cases for these approaches are illustrated. The most important similarities and differences between these approaches are highlighted.
+The downloaded and processed data from this paper, as well as R scripts for the analysis, are available for use in the course. Participants should bring their own laptop to work with publicly available web tools. Analysis with the provided R scripts will be done on a server, for which access will be provided.
 
+<hr>
 
-## Lunch
+## Day 1 : Morning 9.30 - 12.30
 
-## Day 1 : Afternoon
+### Lecture: Introduction to epigenomics (30 min)
 
-### Lecture: Design and data analysis for RNA-seq
-This session covers the most important of planning RNA-seq (or other ~omics experiments), including th number of biological and technical replicates, which controls to include, sample preparation strategies, and sequencing depth. An overview of a standard RNA-seq analysis pipeline is presented, going from raw data to quality control, data exploration, differential expression results. Common pitfalls and sources of variation are discussed.
+This lecture introduces the major epigenetic mechanisms, including DNA methylation, histone modifications, and chromatin accessibility. The relationship between epigenetic regulation and gene expression is discussed.
 
-### Guest lecture
-A second guest lecture with an example RNA-seq study, emphasizing practical aspects of experimental setup and downstream analysis. The emphasis is on how results are validated and integrated with biological knwoledge and hypothesis testing. 
+### Lecture: Methylome sequencing (30 min)
 
-### Lecture: Biological interpretation of RNA-seq data
-This lecture introduces approaches for interpreting gene-level results in a biological context. Topics include visualization, pathway analysis, gene set enrichment, and comparison across conditions. The statistical principles, strengths and limitations of different interpretation methods are discussed.
+An overview of bisulfite sequencing and related methods for measuring DNA methylation. The type of data produced, typical analysis steps, and common applications are explained.
 
-### Lecture: Gentle introduction into programming languages R and Python
-Participants are introduced to the basic concepts of scripting and data analysis in R and Python. The focus is on understanding code structure, reading data, and running simple analyses with well known standard and often used coding libraries. No prior programming experience is assumed. This lecture can be regarded as a primer for the more hands-on sessions on day 2.
+### Hands-on: Working with methylome sequencing data (60 min)
 
-## Diner
+Participants explore example methylation data using prepared files and web-based analysis and visualization tools. The focus is on understanding data structure and basic interpretation.
 
+### Guest lecture (45 min)
 
-## Day 2 : Morning
+A guest speaker presents a case example of epigenomics in a research setting, illustrating experimental design, analysis, and biological interpretation.
 
-### Lecture: The use of public (web-based) analysis tools
-This lecture introduces commonly used web-based platforms for gene expression and pathway analysis. Strengths and limitations of these tools are discussed and with an emphasis is placed on appropriate use (data set preparation, background set selection etc.) and interpretation and exporting of the results.
+<hr>
 
-### Hands-on: Use of public tools for gene set analysis
-Participants work with selected public tools to perform gene set or pathway enrichment analysis. Example gene lists will be provided provided, and results are explored interactively. The goal is to gain practical experience and confidence with these resources.
+## Lunch 12.30 - 13.30
 
-### Lecture: Gentle introduction into R and DESeq2
-This lecture introduces the DESeq2 framework for differential expression analysis in R. The main analysis steps and required inputs are explained conceptually. This session prepares participants for the hands-on RNA-seq analysis later in the course.
+<hr>
 
-## Lunch
+## Day 1 : Afternoon 13.30 - 17.00
 
-## Day 2 : Afternoon
+### Lecture: Introduction to ATAC-seq and ChIP-seq (30 min)
 
-### Lecture: Analysis of BCOR data sets with R
-This lecture walks through the structure of the [BCOR RNA-seq data set](https://pmc.ncbi.nlm.nih.gov/articles/PMC9414116/) and the overall analysis strategy, as provided in the example file. Key steps in the R Markdown workflow are explained. The focus is on understanding how the code implements the concepts introduced earlier.
+This lecture explains the principles behind chromatin accessibility and protein–DNA binding assays. Typical experimental designs and resulting data types are discussed.
 
-### Hands-on: Analysis of BCOR data set (accounts on a server will be provided)
-Participants run the analysis workflow on the BCOR data set using provided server accounts and example R template file in which the analysis has already been run. They reproduce selected results and explore the effects of changing parameters. Instructors are available for guidance and troubleshooting.
+### Hands-on: Working with ChIP-seq and ATAC-seq data (60 min)
 
-### Lecture: The use of ChatGPT and similar tools for biological analysis
-This lecture discusses how large language models can be used to support data analysis, coding, and interpretation. Examples of appropriate and inappropriate use are presented. Limitations, reproducibility, and good practice are emphasized.
+Participants work with example datasets to visualize peaks and genomic coverage. Emphasis is placed on understanding what the signals represent biologically.
+
+### Lecture: Introduction to RNA-seq (30 min)
+
+This lecture introduces RNA-seq as a method for transcriptome profiling. Experimental setup, sequencing strategies, and basic analysis concepts are covered.
+
+### Lecture: The use of public (web-based) analysis tools (30 min)
+
+An overview of commonly used web-based platforms for gene expression and pathway analysis. Strengths and limitations of these tools are discussed.
+
+### Hands-on: Working with public tools for gene set analysis (45 min)
+
+Participants perform gene set or pathway enrichment analyses using example gene lists. Results are explored and interpreted.
+
+<hr>
+
+## Dinner
+
+<hr>
+
+## Day 2 : Morning 9.30 - 12.30
+
+### Lecture: Gentle introduction to R (30 min)
+
+Basic concepts of R scripting, objects, and data structures are introduced. No prior programming experience is assumed.
+
+### Hands-on: Creating visuals with R, dplyr and ggplot2 (60 min)
+
+Participants work with prepared genome coverage datasets (bedGraph files) and create plots showing signal across genomic regions. This serves as an introduction to tidyverse-style data handling and visualization of sequencing data.
+
+### Lecture: Statistical analysis of RNA-seq data (30 min)
+
+This lecture introduces differential expression analysis using DESeq2. Topics include quality control, normalization, and common visualizations such as PCA, volcano plots, heatmaps, and boxplots.
+
+### Hands-on: Working with R and DESeq2 (60 min)
+
+Participants learn how to specify an experimental design, perform differential expression analysis, and visualize results.
+
+### Guest lecture (45 min)
+
+Guest lecture presenting an example RNA-seq study, emphasizing practical aspects of experimental setup and downstream analysis.
+
+<hr>
+
+## Lunch 12.30 - 13.30
+
+<hr>
+
+## Day 2 : Afternoon 13.30 - 17.00
+
+### Lecture: Introduction to biological interpretation of gene sets (45 min)
+
+This lecture covers pathway analysis and comparison across conditions. Examples are drawn from RNA-seq as well as epigenomics-derived gene sets.
+
+### Hands-on: Working on gene sets (60 min)
+
+Participants run the analysis workflow on the BCOR dataset using provided server accounts and an example R template file. They reproduce selected results and explore parameter changes.
+
+### Lecture: The use of ChatGPT and similar tools for biological analysis (30 min)
+
+This lecture discusses how large language models can support data analysis, coding, and interpretation, including limitations and good practice.
+
+### Hands-on: Working with AI tools (30 min)
+
+Participants use web-based AI tools to generate biological interpretations based on supplied gene sets.
+
+### Wrap-up / Q&A (15 min)

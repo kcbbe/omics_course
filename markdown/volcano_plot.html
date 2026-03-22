@@ -1,25 +1,25 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Volcano Plot &mdash; OMICS course  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="_static/tenwise.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/tenwise.css" />
 
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Classical over-representation analysis" href="go_analysis.html" />
     <link rel="prev" title="Log-Log plot" href="log_log_plots.html" /> 
 </head>
@@ -32,11 +32,11 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
+          <a href="../index.html" class="icon icon-home">
             OMICS course
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -69,6 +69,7 @@
 <p class="caption" role="heading"><span class="caption-text">Statistical analysis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="regulated_genes.html">Regulated genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="venn.html">Boxplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="log_log_plots.html">Log-Log plot</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Volcano plot</a></li>
 </ul>
@@ -88,17 +89,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">OMICS course</a>
+          <a href="../index.html">OMICS course</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Volcano Plot</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/volcano_plot.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/markdown/volcano_plot.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -111,7 +112,7 @@
 <p>A volcano plot is a compact way to visualize the results of a differential expression analysis by combining <strong>effect size</strong> and <strong>statistical significance</strong> for each gene in a single figure. Each point represents a gene, with the x-axis showing the log<sub>2</sub> fold change between two conditions (magnitude and direction of change) and the y-axis showing the –log<sub>10</sub> of the p-value or adjusted p-value (strength of statistical evidence). Genes with large fold changes and high statistical significance appear toward the top left or top right of the plot.</p>
 <p>Genes on the <strong>right side</strong> of the plot are upregulated in the condition of interest, while genes on the <strong>left side</strong> are downregulated. Horizontal and vertical reference lines are often added to indicate commonly used thresholds, such as an adjusted p-value cutoff (e.g. FDR &lt; 0.05) and a minimum fold change deemed biologically meaningful. Genes that pass both criteria are typically highlighted, as they represent the most robust and interpretable changes.</p>
 <p>It is important to recognize that <strong>volcano plots depend strongly on the statistical model and preprocessing choices</strong> used in the differential expression analysis. Normalization, dispersion estimation, filtering of lowly expressed genes, and fold-change shrinkage can all influence the appearance of the plot. In particular, genes with very low counts may show large fold changes but low statistical significance, while highly expressed genes can achieve statistical significance with relatively small fold changes. Therefore, volcano plots should be interpreted as a guide to prioritization rather than a definitive statement of biological relevance, and key genes should always be examined in the context of expression levels, experimental design, and downstream validation.</p>
-<p><img alt="Volcano Plot" src="_images/volcano_plot.png" /></p>
+<p><img alt="Volcano Plot" src="../_images/volcano_plot.png" /></p>
 </section>
 
 

@@ -1,27 +1,27 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Standard approach for identifying regulated genes &mdash; OMICS course  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="_static/tenwise.css" />
+  <title>Venn Diagrams &mdash; OMICS course  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/tenwise.css" />
 
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Log-Log plot" href="log_log_plots.html" />
-    <link rel="prev" title="Boxplot of Gene Expression by Treatment" href="boxplot.html" /> 
+    <link rel="prev" title="Standard approach for identifying regulated genes" href="regulated_genes.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,11 +32,11 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
+          <a href="../index.html" class="icon icon-home">
             OMICS course
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -68,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Statistical analysis</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regulated genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regulated_genes.html">Regulated genes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Boxplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="log_log_plots.html">Log-Log plot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="volcano_plot.html">Volcano plot</a></li>
 </ul>
@@ -88,17 +89,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">OMICS course</a>
+          <a href="../index.html">OMICS course</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><strong>Standard approach for identifying regulated genes</strong></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Venn Diagrams</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/regulated_genes.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/markdown/venn.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -106,19 +107,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="standard-approach-for-identifying-regulated-genes">
-<h1><strong>Standard approach for identifying regulated genes</strong></h1>
-<p>A common way to identify regulated genes in RNA-seq data is to apply thresholds based on both <strong>effect size</strong> and <strong>statistical significance</strong>. Effect size is typically expressed as a <strong>log₂ fold change (log₂FC)</strong>, which quantifies how strongly a gene’s expression differs between two conditions. For example, a log₂FC of +1 corresponds to a two-fold increase in expression, while a log₂FC of −1 indicates a two-fold decrease.</p>
-<p>Statistical significance is assessed using a <strong>p-value</strong>, which tests the null hypothesis that a gene shows no true difference in expression between the conditions being compared. In DESeq2, this p-value is derived from a Wald test within a negative binomial model that accounts for differences in sequencing depth and biological variability. However, because thousands of genes are tested simultaneously, many small p-values are expected by chance alone. To correct for this, DESeq2 applies the <strong>Benjamini–Hochberg procedure</strong> to control the false discovery rate (FDR), resulting in an <strong>adjusted p-value</strong> (often denoted <em>padj</em>). The adjusted p-value reflects the probability of observing a false positive after accounting for multiple testing.</p>
-<p>Using these metrics, a typical strategy is to define regulated genes as those showing both a sufficiently large fold change (e.g., |log₂FC| ≥ 1, corresponding to at least a two-fold difference) and strong statistical support (e.g., <em>padj</em> &lt; 0.05). This combined threshold ensures that selected genes exhibit biologically meaningful expression changes with high statistical confidence.</p>
-<p>The identification of regulated genes in this analysis is based on the application of a statistical model as implemented in the R-package <strong>DESeq2</strong>, which estimates dispersion, fits count-based models, and performs hypothesis testing to assess differential expression. A detailed discussion of the underlying statistical framework and model assumptions is beyond the scope of this course. Numerous high-quality tutorials, reviews, and video lectures are available that explain these concepts in depth and provide theoretical background for users who wish to explore them further. In this course, the focus is on interpretation and downstream analysis of the results, while an example of how the DESeq2 model is specified and applied in practice can be found directly in the accompanying HTML report generated from the R Markdown file.</p>
+  <section id="venn-diagrams">
+<h1>Venn Diagrams</h1>
+<p>Venn diagrams are commonly used to visualize the overlap between sets of genes, for example differentially expressed genes identified in multiple contrasts or experimental conditions. Each circle represents a gene set, and the overlapping regions indicate genes that are shared between conditions. This type of visualization provides an intuitive overview of common and condition-specific transcriptional responses.</p>
+<p>One advantage of Venn diagrams is their simplicity and accessibility. They allow rapid comparison of gene lists and are easy to interpret for a broad audience, making them useful for presentations and initial exploratory analyses. They can highlight shared regulatory programs or uniquely regulated gene sets in a visually direct way.</p>
+<p>However, Venn diagrams also have important limitations. They rely on binary classification of genes (significant versus not significant), which depends on arbitrary thresholds for p-values and fold changes. As a result, genes with consistent but moderate effects may be excluded simply because they do not pass a statistical cutoff in one condition. In addition, Venn diagrams do not convey information about effect size, direction of change, or relative magnitude, and they become difficult to interpret when more than three or four conditions are compared. For these reasons, Venn diagrams are best used as a descriptive summary tool rather than as a quantitative comparison method.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="boxplot.html" class="btn btn-neutral float-left" title="Boxplot of Gene Expression by Treatment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="regulated_genes.html" class="btn btn-neutral float-left" title="Standard approach for identifying regulated genes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="log_log_plots.html" class="btn btn-neutral float-right" title="Log-Log plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,0 +1,7 @@
+# Venn Diagrams 
+
+Venn diagrams are commonly used to visualize the overlap between sets of genes, for example differentially expressed genes identified in multiple contrasts or experimental conditions. Each circle represents a gene set, and the overlapping regions indicate genes that are shared between conditions. This type of visualization provides an intuitive overview of common and condition-specific transcriptional responses.
+
+One advantage of Venn diagrams is their simplicity and accessibility. They allow rapid comparison of gene lists and are easy to interpret for a broad audience, making them useful for presentations and initial exploratory analyses. They can highlight shared regulatory programs or uniquely regulated gene sets in a visually direct way.
+
+However, Venn diagrams also have important limitations. They rely on binary classification of genes (significant versus not significant), which depends on arbitrary thresholds for p-values and fold changes. As a result, genes with consistent but moderate effects may be excluded simply because they do not pass a statistical cutoff in one condition. In addition, Venn diagrams do not convey information about effect size, direction of change, or relative magnitude, and they become difficult to interpret when more than three or four conditions are compared. For these reasons, Venn diagrams are best used as a descriptive summary tool rather than as a quantitative comparison method.

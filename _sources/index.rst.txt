@@ -6,56 +6,61 @@
 OMICS COURSE
 ============
 
+Documentation for the omics course
+
+
 Version: |version|
 
 .. toctree::
    :maxdepth: 1
    :caption: Course Overview
 
-   learning_objectives.md
+
+   markdown/learning_objectives.md
   
 .. toctree::
    :maxdepth: 1
    :caption: Intro Omics
 
-   Omics overview <omics_overview.md>
+   Omics overview <markdown/omics_overview.md>
 
 .. toctree::
    :maxdepth: 1
    :caption: RNA seq analysis
 
-   Programming languages <program_languages.md>
-   General analysis flow <standard_pipeine.md>
-   Webtools <webtools.md>
-   Example file <rmd_file_description.md>
+   Programming languages <markdown/program_languages.md>
+   General analysis flow <markdown/standard_pipeine.md>
+   Webtools <markdown/webtools.md>
+   Example file <markdown/rmd_file_description.md>
 
 .. toctree::
    :maxdepth: 1
    :caption: Data Exploration
 
-    M over A <m_over_a_plot.md>
-    PCA <pca_analysis.md>
-    Heatmap <heatmap_expression.md>
-    Boxplot <boxplot.md>
+    M over A <markdown/m_over_a_plot.md>
+    PCA <markdown/pca_analysis.md>
+    Heatmap <markdown/heatmap_expression.md>
+    Boxplot <markdown/boxplot.md>
 
 .. toctree::
    :maxdepth: 1
    :caption: Statistical analysis
 
-   Regulated genes <regulated_genes.md>
-   Log-Log plot <log_log_plots.md>
-   Volcano plot <volcano_plot.md>
+   Regulated genes <markdown/regulated_genes.md>
+   Boxplot <markdown/venn.md>
+   Log-Log plot <markdown/log_log_plots.md>
+   Volcano plot <markdown/volcano_plot.md>
 
 .. toctree::
    :maxdepth: 1
    :caption: Biological Interpretation
 
-    GO analysis<go_analysis.md>
-    GSEA <gsea.md>
+    GO analysis<markdown/go_analysis.md>
+    GSEA <markdown/gsea.md>
 
 
 .. toctree::
    :maxdepth: 3
    :caption: References
 
-   Further reading <further_reading.md>
+   Further reading <markdown/further_reading.md>
